@@ -32,20 +32,24 @@ class OnBoardingPageViewItem extends StatelessWidget {
                 bottom: 0,
                 child: SvgPicture.asset(
                   onBoardingModel.image,
+                  height: 270,
                 ),
               ),
             ],
           ),
         ),
-        const SizedBox(height: 20),
+        const SizedBox(height: 64),
         RichText(
-          text: TextSpan(style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold, fontSize: 24), children: onBoardingModel.title),
+          text: TextSpan(style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.w700, fontSize: 23), children: onBoardingModel.title),
         ),
         const SizedBox(height: 30),
-        Text(
-          onBoardingModel.description,
-          textAlign: TextAlign.center,
-          style: const TextStyle(fontSize: 19, color: Color(0xff4E5556)),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 37),
+          child: Text(
+            onBoardingModel.description,
+            textAlign: TextAlign.center,
+            style: const TextStyle(fontSize: 16, color: Color(0xFF4E5556), fontWeight: FontWeight.w500),
+          ),
         )
       ],
     );

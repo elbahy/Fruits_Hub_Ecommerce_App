@@ -25,6 +25,10 @@ class Assets {
   /// assets/images/onboarding2_img.svg
   static const String assetsImagesOnboarding2Img = "assets/images/onboarding2_img.svg";
 
+  /// Assets for assetsImagesOnboarding3Img
+  /// assets/images/onboarding3_img.svg
+  static const String assetsImagesOnboarding3Img = "assets/images/onboarding3_img.svg";
+
   /// Assets for assetsImagesSplashBottom
   /// assets/images/splash_bottom.svg
   static const String assetsImagesSplashBottom = "assets/images/splash_bottom.svg";

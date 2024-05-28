@@ -27,7 +27,10 @@ class _SplashViewState extends State<SplashView> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SvgPicture.asset(Assets.assetsImagesSplashTop),
+            Align(
+              alignment: Alignment.topLeft,
+              child: SvgPicture.asset(Assets.assetsImagesSplashTop),
+            ),
             Center(child: SvgPicture.asset(Assets.assetsImagesAppLogo)),
             SvgPicture.asset(Assets.assetsImagesSplashBottom),
           ],

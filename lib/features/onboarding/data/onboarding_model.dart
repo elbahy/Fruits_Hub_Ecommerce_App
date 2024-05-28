@@ -33,4 +33,10 @@ List<OnBoardingModel> onBoardingList = [
     description: 'نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية',
     image: Assets.assetsImagesOnboarding2Img,
   ),
+  OnBoardingModel(
+    color: 0xffffe4e1,
+    title: [const TextSpan(text: 'استمتع بخدمة التوصيل ')],
+    description: 'تسوق بسهولة واحصل على فواكهك الطازجة مباشرة إلى باب منزلك. نحن نقدم خدمة توصيل سريعة وآمنة لضمان وصول فواكهك بحالة ممتازة.',
+    image: Assets.assetsImagesOnboarding3Img,
+  ),
 ];
