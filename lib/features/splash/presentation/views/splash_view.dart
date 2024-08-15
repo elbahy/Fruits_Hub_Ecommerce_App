@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fruits_hub/core/database/cache/cache_helper.dart';
 import 'package:fruits_hub/core/router/app_routers.dart';
+import 'package:fruits_hub/core/services/service_locator.dart';
 import 'package:fruits_hub/core/utils/app_assets.dart';
 
 class SplashView extends StatefulWidget {
@@ -15,7 +17,9 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, AppRouters.onBoarding);
+      getIt<CacheHelper>().getData(key: "isVisited") == true
+          ? Navigator.pushReplacementNamed(context, AppRouters.login)
+          : Navigator.pushReplacementNamed(context, AppRouters.onBoarding);
     });
   }
 

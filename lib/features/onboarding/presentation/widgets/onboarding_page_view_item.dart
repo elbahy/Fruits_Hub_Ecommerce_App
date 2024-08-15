@@ -22,7 +22,8 @@ class OnBoardingPageViewItem extends StatelessWidget {
               Positioned.fill(
                 child: SvgPicture.asset(
                   Assets.assetsImagesOnboarding1Bg,
-                  colorFilter: ColorFilter.mode(Color(onBoardingModel.color), BlendMode.srcIn),
+                  colorFilter: ColorFilter.mode(
+                      Color(onBoardingModel.color), BlendMode.srcIn),
                   fit: BoxFit.fill,
                 ),
               ),
@@ -40,7 +41,13 @@ class OnBoardingPageViewItem extends StatelessWidget {
         ),
         const SizedBox(height: 64),
         RichText(
-          text: TextSpan(style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.w700, fontSize: 23), children: onBoardingModel.title),
+          text: TextSpan(
+            style: Theme.of(context)
+                .textTheme
+                .bodyMedium!
+                .copyWith(fontWeight: FontWeight.w700, fontSize: 23),
+            children: onBoardingModel.title,
+          ),
         ),
         const SizedBox(height: 30),
         Padding(
@@ -48,7 +55,10 @@ class OnBoardingPageViewItem extends StatelessWidget {
           child: Text(
             onBoardingModel.description,
             textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 16, color: Color(0xFF4E5556), fontWeight: FontWeight.w500),
+            style: const TextStyle(
+                fontSize: 16,
+                color: Color(0xFF4E5556),
+                fontWeight: FontWeight.w500),
           ),
         )
       ],

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/database/cache/cache_helper.dart';
+import 'package:fruits_hub/core/services/service_locator.dart';
 import 'package:fruits_hub/features/onboarding/data/onboarding_model.dart';
 import 'package:fruits_hub/features/onboarding/presentation/widgets/custom_dots_widget.dart';
 import 'package:fruits_hub/features/onboarding/presentation/widgets/onboarding_page_view_item.dart';
@@ -42,20 +44,27 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                         padding: EdgeInsets.all(8.0),
                         child: Text(
                           'تخطي',
-                          style: TextStyle(color: Color(0xff205D39), fontSize: 16),
+                          style:
+                              TextStyle(color: Color(0xff205D39), fontSize: 16),
                         ),
                       ),
-                      onTap: () => pageController.animateToPage(
-                        onBoardingList.length - 1,
-                        duration: const Duration(milliseconds: 700),
-                        curve: Curves.easeIn,
-                      ),
-                    ),
+                      onTap: () {
+                        pageController.animateToPage(
+                          onBoardingList.length - 1,
+                          duration: const Duration(milliseconds: 700),
+                          curve: Curves.easeIn,
+                        );
+                        getIt<CacheHelper>()
+                            .saveData(key: "isVisited", value: true);
+                      }),
             ]),
           ),
           CustomDotsWidget(currentPage: currentPage),
           const SizedBox(height: 20),
-          currentPage == onBoardingList.length - 1 ? const StartButton() : SizedBox(height: 50, width: MediaQuery.of(context).size.width * 0.8),
+          currentPage == onBoardingList.length - 1
+              ? const StartButton()
+              : SizedBox(
+                  height: 50, width: MediaQuery.of(context).size.width * 0.8),
           const SizedBox(height: 50),
         ],
       ),
