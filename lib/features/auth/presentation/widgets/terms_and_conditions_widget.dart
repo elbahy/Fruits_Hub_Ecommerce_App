@@ -24,8 +24,7 @@ class TermsAndConditionsWidget extends StatelessWidget {
                   side: const BorderSide(color: AppColors.grey, width: 1)),
             ),
           ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width - 32 - 48,
+          Expanded(
             child: Text.rich(TextSpan(
               children: [
                 TextSpan(
