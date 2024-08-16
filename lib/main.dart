@@ -4,6 +4,8 @@ import 'package:fruits_hub/core/database/cache/cache_helper.dart';
 import 'package:fruits_hub/core/router/app_routers.dart';
 import 'package:fruits_hub/core/router/rotuting.dart';
 import 'package:fruits_hub/core/services/service_locator.dart';
+import 'package:fruits_hub/core/theme/app_themedata.dart';
+import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
 void main() async {
@@ -31,9 +33,7 @@ class FruitsHubApp extends StatelessWidget {
       title: 'Fruits Hub',
       onGenerateRoute: onGenerateRoute,
       initialRoute: AppRouters.splash,
-      theme: ThemeData(
-        textTheme: const TextTheme(bodyMedium: TextStyle(fontFamily: 'Cairo')),
-      ),
+      theme: themeData,
     );
   }
 }
