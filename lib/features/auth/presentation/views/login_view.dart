@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/router/app_routers.dart';
 import 'package:fruits_hub/features/auth/presentation/widgets/create_account_text.dart';
 import 'package:fruits_hub/features/auth/presentation/widgets/login_form_widget.dart';
 import 'package:fruits_hub/features/auth/presentation/widgets/soical_login_section.dart';
@@ -21,7 +22,11 @@ class LoginView extends StatelessWidget {
               SizedBox(height: 15),
               LoginFormWidget(),
               SizedBox(height: 35),
-              CreateAccountTextWidget(),
+              CreateAccountTextWidget(
+                text1: "لا تمتلك حساب؟ ",
+                text2: "قم بإنشاء حساب",
+                screen: AppRouters.register,
+              ),
               SizedBox(height: 35),
               SocialLoginSection()
             ],
